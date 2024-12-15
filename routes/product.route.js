@@ -1,5 +1,4 @@
 import express from 'express';
-import multer from 'multer';
 import { addProduct, deleteProductById, getProduct, getProductById, updateProduct } from '../controller/product.controller.js';
 
 const router = express.Router()
