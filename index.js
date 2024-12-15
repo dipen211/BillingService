@@ -19,7 +19,14 @@ const app = express()
 // middleware
 app.use(express.json())
 app.use(urlencoded({ extended: false }))
-app.use(cors());
+
+const corsOptions = {
+    origin: 'https://hiva-sanitrade.onrender.com', // Allow only this origin
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allowed HTTP methods
+    credentials: true, // Allow cookies or authorization headers
+};
+
+app.use(cors(corsOptions));
 
 // routes
 app.use("/api/products", productRoute)
