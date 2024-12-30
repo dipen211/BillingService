@@ -13,6 +13,6 @@ router.put('/:id', updateProduct)
 
 router.delete('/:id', deleteProductById)
 
-router.delete('/item/:id', deleteNestedItemById)
+router.delete('/:id/item/:itemId', deleteNestedItemById);
 
 export default router;

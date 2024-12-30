@@ -1,17 +1,13 @@
 {
-  "homepage": "https://dipen211.github.io/Billing",
+  "homepage": "",
   "name": "hiva",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "server": "node index.js",
-    "start": "nodemon index.js",
-    "build": "react-scripts build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -26,7 +22,6 @@
     "mongoose": "^8.8.2"
   },
   "devDependencies": {
-    "gh-pages": "^6.2.0",
     "nodemon": "^3.1.7"
   }
 }
