@@ -54,3 +54,23 @@ export const deleteProductById = async (req, res) => {
         res.status(500).json({ message: error.message })
     }
 }
+
+export const deleteNestedItemById = async (req, res) => {
+    try {
+        const { id, itemId } = req.params;
+        const updatedProduct = await Product.findByIdAndUpdate(
+            id,
+            { $pull: { items: { _id: itemId } } },
+            { new: true }
+        );
+        if (!updatedProduct) {
+            return res.status(404).json({ message: "Parent product not found" });
+        }
+        res.status(200).json({
+            message: "Nested item deleted successfully",
+            data: updatedProduct
+        });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
